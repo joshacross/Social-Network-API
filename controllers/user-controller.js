@@ -1,6 +1,7 @@
-const { Comment, Post } = require('../models');
+const { Thought, User } = require('../models');
+// Do I need to destructure { Reaction } from the reactionSchema through Thought model?
 
-const commentController = {
+const userController = {
     // add comment to Post
     addComment({ params, body }, res) {
         console.log(body);
