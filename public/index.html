@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>post Discussion | post Hunt</title>
+    <title>afterThoughts | The Social Network API</title>
     <link
       href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap&family=Karla:400,700|Rubik:400,400i,700&display=swap"
       rel="stylesheet"
@@ -25,7 +25,7 @@
       >
         <a href="/">
           <h1 class="text-light bg-dark py-3 px-4 logo round-25-80">
-            post Hunt
+            AfterThoughts - The Social Network API
           </h1>
         </a>
         <h3 class="text-light bg-dark p-3 round-25-80" id="back-btn">
@@ -43,10 +43,10 @@
         <div class="w-100 border-dark-top my-3"></div>
         <h4 class="text-dark">Created At: <span id="created-at"></span></h4>
         <div class="w-100 border-dark-top my-3"></div>
-        <h4 class="text-dark">Suggested Size: <span id="size"></span></h4>
+        <h4 class="text-dark">Share Your<span id="size"></span></h4>
         <div class="w-100 border-dark-top my-3"></div>
-        <h4 class="text-dark">Toppings</h4>
-        <div class="flex-row justify-space-between" id="toppings-list"></div>
+        <h4 class="text-dark">Thoughts</h4>
+        <div class="flex-row justify-space-between" id="postType"></div>
       </section>
 
       <section class="col-12 col-lg-8">
@@ -71,7 +71,7 @@
             />
           </div>
           <div class="mb-2">
-            <label for="comment">Leave Your Comment</label>
+            <label for="comment">Leave Your Thought</label>
             <textarea
               class="form-textarea form-input"
               id="comment"
@@ -80,7 +80,7 @@
             ></textarea>
           </div>
 
-          <button class="mt-3 btn display-block w-100">Add Comment</button>
+          <button class="mt-3 btn display-block w-100">Add Reaction</button>
         </form>
       </section>
     </main>

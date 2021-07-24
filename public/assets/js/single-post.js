@@ -3,7 +3,7 @@ const $postName = document.querySelector('#post-name');
 const $createdBy = document.querySelector('#created-by');
 const $createdAt = document.querySelector('#created-at');
 const $size = document.querySelector('#size');
-const $toppingsList = document.querySelector('#toppings-list');
+const $friendList = document.querySelector('#friend-list');
 const $commentSection = document.querySelector('#comment-section');
 const $newCommentForm = document.querySelector('#new-comment-form');
 
@@ -72,14 +72,14 @@ function printPost(postData) {
 
   postId = postData._id;
 
-  const { postName, createdBy, createdAt, size, toppings, comments } = postData;
+  const { postName, createdBy, createdAt, size, friends, comments } = postData;
 
   $postName.textContent = postName;
   $createdBy.textContent = createdBy;
   $createdAt.textContent = createdAt;
   $size.textContent = size;
-  $toppingsList.innerHTML = toppings
-    .map(topping => `<span class="col-auto m-2 text-center btn">${topping}</span>`)
+  $friendsList.innerHTML = friends
+    .map(friend => `<span class="col-auto m-2 text-center btn">${friend}</span>`)
     .join('');
 
   if (comments && comments.length) {

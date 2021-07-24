@@ -1,21 +1,21 @@
 const $addToppingBtn = document.querySelector('#add-topping');
 const $postForm = document.querySelector('#post-form');
-const $customToppingsList = document.querySelector('#custom-toppings-list');
+const $customReactions = document.querySelector('#customReactions');
 
 const handleAddTopping = event => {
   event.preventDefault();
 
-  const toppingValue = document.querySelector('#new-topping').value;
+  const thoughtValue = document.querySelector('#newThought').value;
 
-  if (!toppingValue) {
+  if (!thoughtValue) {
     return false;
   }
 
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
-  checkbox.name = 'topping';
-  checkbox.value = toppingValue;
-  checkbox.id = toppingValue
+  checkbox.name = 'thought';
+  checkbox.value = thoughtValue;
+  checkbox.id = thoughtValue
     .toLowerCase()
     .split(' ')
     .join('-');
@@ -31,9 +31,9 @@ const handleAddTopping = event => {
 
   divWrapper.appendChild(checkbox);
   divWrapper.appendChild(label);
-  $customToppingsList.appendChild(divWrapper);
+  $customReactions.appendChild(divWrapper);
 
-  toppingValue.value = '';
+  thoughtValue.value = '';
 };
 
 const handlePostSubmit = event => {
@@ -41,16 +41,16 @@ const handlePostSubmit = event => {
 
   const postName = $postForm.querySelector('#post-name').value;
   const createdBy = $postForm.querySelector('#created-by').value;
-  const size = $postForm.querySelector('#post-size').value;
-  const toppings = [...$postForm.querySelectorAll('[name=topping]:checked')].map(topping => {
+  const friends = $postForm.querySelector('#post-size').value;
+  const thoughts = [...$postForm.querySelectorAll('[name=topping]:checked')].map(topping => {
     return topping.value;
   });
 
-  if (!postName || !createdBy || !toppings.length) {
+  if (!postName || !createdBy || !thoughts.length) {
     return;
   }
 
-  const formData = { postName, createdBy, size, toppings };
+  const formData = { postName, createdBy, size, thoughts };
   fetch('/api/posts', {
     method: 'POST',
     headers: {

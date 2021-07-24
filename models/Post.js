@@ -34,7 +34,7 @@ const PostSchema = new Schema({
         enum: ['Post', 'Photo', 'Reel', 'Snap', 'Message'],
         default: 'Message'
     },
-// post's toppings
+// post's comments
     posts: [],
     comments: [
         {
