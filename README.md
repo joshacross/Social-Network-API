@@ -1,19 +1,17 @@
-# Spcial Network API
+# AfterThought - The Spcial Network API
 
 ## Description
-The Social Network Api is a fully deployed, cloud-based, P2P, social application on Heroku server. Users are able to create posts, add comment and reply to posts.
+AfterThought is a NoSQL Social Network backend built with Mongoose, MongoDB, and Express.js. AfterThought allows users to create various types of Thoughts; from what they are thinking about for the future ("FutureThought"), what is currently on their mind (CurrentThought), and what are their thoughts about things that have happened (AfterThought). 
 
-This application was built with a NoSQL backend using MongoDB, Mongoose, and Express.JS, created a MongoDB Atlas database, and connected to Heroku server, and also utilizes IndexDB, allowing users to use the app offline. 
+Plus, users are able to add, update, and delete reactions to other thoughts, as well as adding and removing friends from their friend list. 
 
-## Functionality 
+## Functionality
 
 * Created models with Mongoose
 * Utilized virtuals to extend model's functionality to account for scalability
 * Created subschemas and subdouments with mongoose
-* Added IndexedDB to add offline functionality
 * Validated models to normalize data
-* Deployed application to Heroku
-* Used MongoDB Atlas to host the database in the cloud
+* Used Bcrypt to encrypt a users password and removed from API calls. 
 
 ## Languages
 * MongoDB - NoSQL
@@ -23,3 +21,9 @@ This application was built with a NoSQL backend using MongoDB, Mongoose, and Exp
 * Javascript
 * HTML
 * CSS
+
+## Video Walkthrough (Coming Soon)
+
+## Get Started
+
+## Reference Images
