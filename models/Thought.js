@@ -3,11 +3,11 @@ const dateFormat = require('../utils/dateFormat');
 
 
 //Schema
-const PostSchema = new Schema({
+const thoughtSchema = new Schema({
 //Name of Post
-    postName: {
+    thoughtName: {
         type: String,
-        required: 'You need to provide a post title!',
+        required: 'You must title your thought!',
         trim: true
     },
 // name of the user that created the post
@@ -27,21 +27,21 @@ const PostSchema = new Schema({
         type: Date,
         default: Date.now
     },
-// types of posts suggests
+    // types of thoughts
     types: {
         type: String,
         required: true,
-        enum: ['Post', 'Photo', 'Reel', 'Snap', 'Message'],
+        enum: ['thinking', 'currentThought', 'afterThought'],
         default: 'Message'
     },
-// post's comments
-    posts: [],
-    comments: [
+    // reactions on thoughts
+    thoughts: [],
+    reactions: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'Reaction'
         }
-    ]
+    ],
 },
     {
         toJSON: {
@@ -53,12 +53,12 @@ const PostSchema = new Schema({
 );
 
 // get total count of comments and replies on retrieval
-postSchema.virtual('commentCount').get(function() {
-    return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
+thoughtSchema.virtual('reactionCount').get(function() {
+    return this.reactions.reduce((total, reaction) => total + reaction.replies.length + 1, 0);
   });
   
 
-const post = model('post', postSchema);
+const thought = model('thought', thoughtSchema);
 
 //export post model
-module.exports = post;
+module.exports = thought;
