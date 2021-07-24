@@ -22,8 +22,23 @@ Plus, users are able to add, update, and delete reactions to other thoughts, as 
 * HTML
 * CSS
 
-## Video Walkthrough (Coming Soon)
+## Video Walkthrough
+https://www.loom.com/share/a4c398cbdffd4eaf8e02c55921a5f1fa 
 
 ## Get Started
+* Clone Repository to a desired directory on your computer
+* Open directory in your code editor
+* npm i to install dependency files
+* npm start to start the application
+
+### API Endpoints:
+* /api/users
+* /api/users/friends
+* /api/thoughts
+* /api/thoughts/reactions
 
 ## Reference Images
+<img src="./assets/images/postUsers.png" alt="insomnia core example of posting users to the MongoDB database" />
+<img src="./assets/images/getUsers.png" alt="Insomnia Core example of an API getting a user from the MongoDB database" />
+<img src="./assets/images/thoughts.png" alt="Insomnia Core example of an API getting Thoughts" />
+<img src="./assets/images/postThoughts.png" alt="insomnia core example of posting thoughts to the MongoDB database" />

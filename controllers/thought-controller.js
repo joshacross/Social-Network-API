@@ -74,12 +74,13 @@ const thoughtController = {
   },
   /////// find thought and add reaction /// 
   addReaction({ params }, res) {
+    console.log(params);
     //find thought and update by adding a reaction
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       // cannot have multiple reactions of the same reaction from the same user
       // if reaction does not exist, addToSet
-      { $addToSet: { reactions: { reactionId: params.reactionId}}},
+      { $addToSet: { reactions: { params, reactionId}}},
       { new: true, runValidators: true })
       .then(ddThoughtData => {
         if (!dbThoughtData) {
@@ -94,7 +95,7 @@ const thoughtController = {
   deleteReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
-      { $pull: { reactions: { reactionId: params.reactionId}}},
+      { $pull: { reactions: { reactionId: params, reactionId}}},
       )
       .then(dbThoughtData => res.json(dbThoughtData))
       .catch(err => res.json(err));

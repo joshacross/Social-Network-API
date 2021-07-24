@@ -25,9 +25,10 @@ router.route('/:thoughtId')
 router.route('/:userId/:thoughtId').delete(deleteThought);
 
 // reactions - api/comments/<thoughtId>/reactions/<reactionId>
-router
-  .route('/:thoughtId/reactions/:reactionId')
+router.route('/:thoughtId/reactions/')
   .put(addReaction)
+
+router.route('./:thoughtId/reactions/:reactionId')
   .delete(deleteReaction);
 
 module.exports = router;
