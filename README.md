@@ -15,7 +15,7 @@ Plus, users are able to add, update, and delete reactions to other thoughts, as 
 
 ## Languages
 * MongoDB - NoSQL
-* Mongoose - Object Document Mapper
+* Mongoose - Object Data Modeling
 * Express.JS
 * Node.JS
 * Javascript
