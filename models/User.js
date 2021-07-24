@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 const dateFormat = require('../utils/dateFormat');
 const bcrypt = require('bcrypt');
 
-
 //Schema
 const userSchema = new Schema({
 //Name of Post
@@ -79,7 +78,7 @@ userSchema.virtual('friendCount').get(function() {
   });
   
 
-const User = model('User', UserSchema);
+const User = model('User', userSchema);
 
 //export User model
 module.exports = User;
