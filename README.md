@@ -1,4 +1,4 @@
-# AfterThought - The Spcial Network API
+# AfterThought - The Social Network API
 
 ## Description
 AfterThought is a NoSQL Social Network backend built with Mongoose, MongoDB, and Express.js. AfterThought allows users to create various types of Thoughts; from what they are thinking about for the future ("FutureThought"), what is currently on their mind (CurrentThought), and what are their thoughts about things that have happened (AfterThought). 

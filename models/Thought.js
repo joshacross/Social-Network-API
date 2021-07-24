@@ -40,8 +40,8 @@ const thoughtSchema = new Schema({
         enum: ['thinking', 'currentThought', 'afterThought'],
         default: 'currentThought'
     },
-    // thoughs array to hold user's thoughts
-    thoughts: [],
+    // // thoughs array to hold user's thoughts
+    // thoughts: [],
     // reactions on thoughts, reference reactionSchema
     reactions: [reactionSchema],
 },
