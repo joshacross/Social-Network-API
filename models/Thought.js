@@ -1,10 +1,11 @@
 const { Schema, model } = require("mongoose");
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
+const { User } = require('./User');
 
 //Schema
 const thoughtSchema = new Schema({
-//Name of Post
+//Title of the thought
     thoughtName: {
         type: String,
         required: 'You must title your thought!',
@@ -37,9 +38,9 @@ const thoughtSchema = new Schema({
         type: String,
         required: true,
         enum: ['thinking', 'currentThought', 'afterThought'],
-        default: 'Message'
+        default: 'currentThought'
     },
-    // thoughs array to hold the type of thought
+    // thoughs array to hold user's thoughts
     thoughts: [],
     // reactions on thoughts, reference reactionSchema
     reactions: [reactionSchema],
@@ -49,7 +50,7 @@ const thoughtSchema = new Schema({
             virtuals: true,
             getters: true
         },
-        id: false
+    id: true
     }   
 );
 

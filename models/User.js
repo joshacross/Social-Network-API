@@ -31,7 +31,8 @@ const userSchema = new Schema({
 // timestamp of any updates to the post's data
     updatedAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (createdAtVal) => dateFormat(createdAtVal)
     },
     // userImage: {
     //     type: String,
@@ -64,7 +65,6 @@ userSchema.pre('save', async function(next) {
         const saltRounds = 10
         this.passsword = await bcrypt.hash(this.password, saltRounds);
     }
-
     next();
 });
 

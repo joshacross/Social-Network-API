@@ -33,7 +33,7 @@ const userController = {
         path: 'thoughts',
         select: '-__v'
       })
-      .select('-__v', 'password')
+      .select('-__v')
       .sort({ _id: -1 })
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
@@ -48,7 +48,7 @@ const userController = {
         path: 'friends',
         select: '-__v'
       })
-      .select('-__v', 'password')
+      .select('-__v')
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
         console.log(err);
@@ -83,6 +83,7 @@ const userController = {
   addFriend({ params }, res) {
     // find a user, then add friend to user
     User.findOneAndUpdate(
+      // {$createIndexes: $**}
       { _id: params.userId },
       { $addToSet: { friends: { friendsId: params.friendsId}}},
       { new: true, runValidators: true })
