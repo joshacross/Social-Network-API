@@ -34,6 +34,10 @@ const userSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    // userImage: {
+    //     type: String,
+    //     default: 'default.png'
+    // },
     thoughts: [
         {
             type: Schema.Types.ObjectId,
